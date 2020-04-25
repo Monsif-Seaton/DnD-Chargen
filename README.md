@@ -1,1 +1,1 @@
-# DnD-Chargen
+# D&D Character sheet generator
