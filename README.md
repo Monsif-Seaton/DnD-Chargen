@@ -9,7 +9,7 @@ In fulfillment of the week 5 CRUD application project
 * sit
 * amet
 
-#Requirements
+# Requirements
 To create a CRUD application of our choice that uses the technologies and methods we have learned up to this point namely:
 *A Kanban board
 *A relational database to store at least two tables persistently and a model of their relationship
@@ -23,7 +23,7 @@ To create a CRUD application of our choice that uses the technologies and method
 **Solution**
 I settled on making a simple d&d character sheet platform that allows the user to create, read, update and delete characters based on the d&d 5E ruleset. It will also have an admin function to allow for the dungeon master to view the character sheets of their players for the purpose of session planning
 
-#Architecture
+# Architecture
 Initial design
 [insert erd1]
 design 2
@@ -33,13 +33,13 @@ final design
 [insert final design]
 commentary on why it changed
 
-system level design
+**system level design**
 [insert pic of tools being used as a CI pipeline diagram]
 
-#Testing
+# Testing
 reports and tool implementation
 
-#Risk assesment
+# Risk assesment
 initial
 [insert pic]
 discuss
@@ -47,11 +47,11 @@ final
 [pic]
 discuss
 
-#Front end design
+# Front end design
 [insert pictures]
 
-#Future improvements
+# Future improvements
 discuss
 
-#Authors
+# Authors
 Monsif Seaton
