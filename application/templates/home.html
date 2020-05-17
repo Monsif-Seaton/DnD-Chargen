@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <h1><a href="{{ url_for("new") }}">New</a></h1>
+    {% for char in chars %}
+        <div>
+		<h3><a href="{{ url_for('sheet', name=chars[char]["name"]) }}">{{ chars[char]["name"] }}</a></h3>
+            <p><b> - Class:</b>{{ chars[char]["class"] }}</p>
+	    <p><b> - Race:</b>{{ chars[char]["race"] }}</p>
+            <p><b> - Level:</b>{{ chars[char]["level"] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

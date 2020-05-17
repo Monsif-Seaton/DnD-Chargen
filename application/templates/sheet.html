@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div>
+  <h1>{{ data["name"] }}</h1>
+  <h2><a href="{{ url_for("edit") }}">edit</a></h2>
+  <hr>
+  <p>Class - {{ data["class"] }}</p>
+  <p>Race - {{ data["race"] }}</p>
+  <p>Level - {{ data["level"] }}</p>
+  <p>Constitution - {{ data["CON"] }}</p>
+  <p>Dexterity - {{ data["DEX"] }}</p>
+  <p>Strength - {{ data["STR"] }}</p>
+  <p>Intelligence - {{ data["INT"] }}</p>
+  <p>Wisdom - {{ data["WIS"] }}</p>
+  <p>Charisma - {{ data["CHA"] }}</p>
+  <p>Health - {{ data["Health"] }}</p>
+  <p>Armor Class - {{ data["Armor"] }}</p>
+  <p>Spell Points - {{ data["Spell points"] }}</p>
+  <p>Speed - {{ data["Speed"] }}</p>
+</div>
+{% endblock %}
