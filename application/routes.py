@@ -1,6 +1,7 @@
-from flask import render_template
-
-from application import app
+from flask import render_template, redirect, url_for
+from application.models import characters
+from application import app, db
+from application.forms import NewForm
 
 chars = {
         "Kaynon Song": {
@@ -40,11 +41,23 @@ chars = {
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html", title="Home", chars=chars)
+    Characters = characters.query.first()
+    return render_template("home.html", title="Home", chars=chars, Characters=Characters)
 
-@app.route('/new')
+@app.route('/new', methods=["GET", "POST"])
 def new():
- return render_template('new.html', title='New')
+    form = NewForm()
+    if form.validate_on_submit():
+        new = characters(
+name = form.name.data, clas = form.clas.data, race = form.race.data, level = form.level.data,CON = form.CON.data, DEX = form.DEX.data, STR = form.STR.data, INT = form.INT.data, WIS = form.WIS.data, CHA = form.CHA.data, Health = form.Health.data, Armor = form.Armor.data, Spell_points = form.Spell_points.data, Speed = form.Speed.data)
+        db.session.add(new)
+        db.session.commit()
+
+        return redirect(url_for("home"))
+    else:
+        print(form.errors)
+
+    return render_template("new.html", title="New", form=form)
 
 @app.route('/sheet/<name>')
 def sheet(name):
@@ -56,3 +69,4 @@ def sheet(name):
 @app.route("/edit")
 def edit():
     return render_template('edit.html', title='Edit')
+
