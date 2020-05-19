@@ -1,6 +1,9 @@
 {% extends 'layout.html' %}
 {% block body %}
     <h1><a href="{{ url_for("new") }}">New</a></h1>
+    <p>test</p>
+    <h1>{{ Characters.name }}</h1>
+    <p>endtest</p>
     {% for char in chars %}
         <div>
 		<h3><a href="{{ url_for('sheet', name=chars[char]["name"]) }}">{{ chars[char]["name"] }}</a></h3>
