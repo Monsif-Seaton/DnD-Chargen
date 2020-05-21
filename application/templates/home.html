@@ -1,15 +1,13 @@
 {% extends 'layout.html' %}
 {% block body %}
-    <h1><a href="{{ url_for("new") }}">New</a></h1>
-    <p>test</p>
-    <h1>{{ Characters.name }}</h1>
-    <p>endtest</p>
-    {% for char in chars %}
+  <h1>Characters</h1>
+  <h3><a href="{{ url_for("new") }}">New</a>
+    {% for character in Characters %}
         <div>
-		<h3><a href="{{ url_for('sheet', name=chars[char]["name"]) }}">{{ chars[char]["name"] }}</a></h3>
-            <p><b> - Class:</b>{{ chars[char]["class"] }}</p>
-	    <p><b> - Race:</b>{{ chars[char]["race"] }}</p>
-            <p><b> - Level:</b>{{ chars[char]["level"] }}</p>
+		<h3><a href="{{ url_for('sheet', identity=character.id) }}">{{ character.name }}</a></h3>
+            <p><b> - Class: </b>{{ character.clas }}</p>
+	    <p><b> - Race: </b>{{ character.race }}</p>
+            <p><b> - Level: </b>{{ character.level }}</p>
         </div>
     {% endfor %}
 {% endblock %}

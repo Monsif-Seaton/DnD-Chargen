@@ -1,4 +1,4 @@
 from application import db
-from application.models import characters
+from application.models import characters, classes
 
 db.create_all()
