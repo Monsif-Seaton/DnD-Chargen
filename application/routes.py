@@ -84,7 +84,7 @@ def delete(identity):
         db.session.delete(char)
         db.session.commit()
         return redirect(url_for("home"))
-    return render_template("delete.html", form=form, identity=identity)
+    return render_template("delete.html", form=form, identity=identity, title="Delete")
 
 @app.route("/deleted/<identity>", methods=["GET", "POST"])
 def deleted(identity):
@@ -96,18 +96,8 @@ def deleted(identity):
 
 @app.route('/sheet/<identity>', methods=["GET", "POST"])
 def sheet(identity):
-   # data = None
-   # if identity in characters:
-   # Classes = classes.query.all()
-   # chrs = characters.join(Classes, characters.clas==Classes.clas)
-   # data = chrs.query.get(identity)
-   # data2 = classes.query.get(data["clas"])
-   # cl = data.clas
-   # data2= classes.query.get(data.clas)
     sql_cmd = text("select * from characters inner join classes where characters.clas = classes.clas and characters.id = {};".format(identity))
     data = db.engine.execute(sql_cmd).fetchall()
-   # print("hello")
-   # print(data2)
     form = DeleteForm()
     if form.is_submitted():
         char = characters.query.filter_by(id=identity).first()
