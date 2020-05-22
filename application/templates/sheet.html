@@ -1,21 +1,24 @@
 {% extends 'layout.html' %}
 {% block body %}
 <div>
-  <h1>{{ data["name"] }}</h1>
-  <h2><a href="{{ url_for("edit") }}">edit</a></h2>
+	<h1>{{ data[0][1] }}, {{ data[0][3] }} {{ data[0][2] }} - Level {{ data[0][4] }} </h1>
+  <h2><a href="{{ url_for("edit", identity=data[0][0]) }}">Edit</a></h2>
   <hr>
-  <p>Class - {{ data["class"] }}</p>
-  <p>Race - {{ data["race"] }}</p>
-  <p>Level - {{ data["level"] }}</p>
-  <p>Constitution - {{ data["CON"] }}</p>
-  <p>Dexterity - {{ data["DEX"] }}</p>
-  <p>Strength - {{ data["STR"] }}</p>
-  <p>Intelligence - {{ data["INT"] }}</p>
-  <p>Wisdom - {{ data["WIS"] }}</p>
-  <p>Charisma - {{ data["CHA"] }}</p>
-  <p>Health - {{ data["Health"] }}</p>
-  <p>Armor Class - {{ data["Armor"] }}</p>
-  <p>Spell Points - {{ data["Spell points"] }}</p>
-  <p>Speed - {{ data["Speed"] }}</p>
+  <p>Class - {{ data[0][2] }}</p>
+  <p>Race - {{ data[0][3] }}</p>
+  <p>Level - {{ data[0][4] }}</p>
+  <p>Hit Die - D{{ data[0][-2] }}</p>
+  <p>Saving Throw Proficiency - {{ data[0][-1] }}</p>
+  <p>Constitution - {{ data[0][5] }}</p>
+  <p>Dexterity - {{ data[0][6] }}</p>
+  <p>Strength - {{ data[0][7] }}</p>
+  <p>Intelligence - {{ data[0][8] }}</p>
+  <p>Wisdom - {{ data[0][9] }}</p>
+  <p>Charisma - {{ data[0][10] }}</p>
+  <p>Health - {{ data[0][11] }}</p>
+  <p>Armor Class - {{ data[0][12] }}</p>
+  <p>Spell Points - {{ data[0][13] }}</p>
+  <p>Speed - {{ data[0][14] }}</p>
 </div>
+<h2><a href="{{ url_for("delete", identity=data[0][0]) }}">Delete</a></h2>
 {% endblock %}

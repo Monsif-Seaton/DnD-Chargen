@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="form">
+        <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                {{ form.name.label }}
+                {{ form.name }}
+                <br>
+                {{ form.clas.label }}
+                {{ form.clas }}
+                <br>
+                {{ form.race.label }}
+                {{ form.race }}
+                <br>
+                {{ form.level.label }}
+                {{ form.level }}
+                <br>
+                {{ form.CON.label }}
+                {{ form.CON }}
+                <br>
+                {{ form.DEX.label }}
+                {{ form.DEX }}
+                <br>
+                {{ form.STR.label }}
+                {{ form.STR }}
+                <br>
+                {{ form.INT.label }}
+                {{ form.INT }}
+                <br>
+                {{ form.WIS.label }}
+                {{ form.WIS }}
+                <br>
+                {{ form.CHA.label }}
+                {{ form.CHA }}
+                <br>
+                {{ form.Health.label }}
+                {{ form.Health }}
+                <br>
+                {{ form.Armor.label }}
+                {{ form.Armor }}
+                <br>
+                {{ form.Spell_points.label }}
+                {{ form.Spell_points }}
+                <br>
+                {{ form.Speed.label }}
+                {{ form.Speed }}
+                <br>
+                {{ form.submit }}
+        </form>
+</div>
+{% endblock %}
