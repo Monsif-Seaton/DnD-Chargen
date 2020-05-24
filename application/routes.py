@@ -5,43 +5,6 @@ from application.forms import NewForm, EditForm, DeleteForm
 from sqlalchemy.orm import join
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import text
-#from sqlalchemy.engine.Connectable import execute
-
-
-chars = {
-        "Kaynon Song": {
-        "name":"Kaynon Song",
-        "class":"Warlock",
-        "race":"Tiefling",
-        "level":10,
-        "CON":14,
-        "DEX":13,
-        "STR":9,
-        "INT":11,
-        "WIS":13,
-        "CHA":18,
-        "Health":73,
-        "Armor":14,
-        "Spell points":63,
-        "Speed":30
-    },
-    "t4r9s": {
-        "name": "t4r9s",
-        "class": "Ranger",
-        "race":"Warforged",
-        "level":5,
-        "CON":17,
-        "DEX":19,
-        "STR":9,
-        "INT":8,
-        "WIS":12,
-        "CHA":6,
-        "Health":47,
-        "Armor":17,
-        "Spell points":14,
-        "Speed":35
-    }
-    }
 
 @app.route("/")
 @app.route("/home")
@@ -53,23 +16,9 @@ def home():
 def new():
     form = NewForm()
     if form.validate_on_submit():
-        new = characters(name = form.name.data,
-                clas = form.clas.data,
-                race = form.race.data,
-                level = form.level.data,
-                CON = form.CON.data,
-                DEX = form.DEX.data,
-                STR = form.STR.data,
-                INT = form.INT.data,
-                WIS = form.WIS.data,
-                CHA = form.CHA.data,
-                Health = form.Health.data,
-                Armor = form.Armor.data,
-                Spell_points = form.Spell_points.data,
-                Speed = form.Speed.data)
+        new = characters(name=form.name.data,clas=form.clas.data,race=form.race.data,level=form.level.data,CON=form.CON.data,DEX=form.DEX.data,STR=form.STR.data,INT=form.INT.data,WIS=form.WIS.data,CHA=form.CHA.data,Health=form.Health.data,Armor=form.Armor.data,Spell_points=form.Spell_points.data,Speed=form.Speed.data)
         db.session.add(new)
         db.session.commit()
-
         return redirect(url_for("home"))
     else:
         print(form.errors)
@@ -99,7 +48,7 @@ def sheet(identity):
     sql_cmd = text("select * from characters inner join classes where characters.clas = classes.clas and characters.id = {};".format(identity))
     data = db.engine.execute(sql_cmd).fetchall()
     form = DeleteForm()
-    if form.is_submitted():
+    if form.validate_on_submit():
         char = characters.query.filter_by(id=identity).first()
         db.session.delete(char)
         db.session.commit()

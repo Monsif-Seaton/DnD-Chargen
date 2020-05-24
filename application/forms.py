@@ -7,7 +7,7 @@ class NewForm(FlaskForm):
     name = StringField('Name',
         validators = [
             DataRequired(),
-            Length(min=2, max=50)
+            Length(min=1, max=50)
         ]
     )
     clas = SelectField('Class', choices=[("Barbarian","Barbarian"),("Bard","Bard"),("Cleric","Cleric"),("Druid","Druid"),("Fighter","Fighter"),("Monk","Monk"),("Paladin","Paladin"),("Ranger","Ranger"),("Rogue","Rogue"),("Sorcerer","Sorcerer"),("Warlock","Warlock"),("Wizard","Wizard")]
@@ -15,7 +15,7 @@ class NewForm(FlaskForm):
     race = StringField('Race',
         validators = [
             DataRequired(),
-            Length(min=2, max=100)
+            Length(min=1, max=100)
         ]
     )
     level = IntegerField('Level',
@@ -79,7 +79,7 @@ class EditForm(FlaskForm):
     name = StringField('Name',
         validators = [
             DataRequired(),
-            Length(min=2, max=50)
+            Length(min=1, max=50)
         ]
     )
     clas = SelectField('Class', choices=[("Barbarian","Barbarian"),("Bard","Bard"),("Cleric","Cleric"),("Druid","Druid"),("Fighter","Fighter"),("Monk","Monk"),("Paladin","Paladin"),("Ranger","Ranger"),("Rogue","Rogue"),("Sorcerer","Sorcerer"),("Warlock","Warlock"),("Wizard","Wizard")]
@@ -87,7 +87,7 @@ class EditForm(FlaskForm):
     race = StringField('Race',
         validators = [
             DataRequired(),
-            Length(min=2, max=100)
+            Length(min=1, max=100)
         ]
     )
     level = IntegerField('Level',
