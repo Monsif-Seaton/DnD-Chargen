@@ -13,7 +13,8 @@ class TestBase(TestCase):
         config_name = 'testing'
         app.config.update(SQLALCHEMY_DATABASE_URI=getenv('TEST_DB_URI'),
                 SECRET_KEY=getenv('TEST_SECRET_KEY'),
-                WTF_CSRF_ENABLE=False,
+                WTF_CSRF_ENABLED=False,
+                
                 DEBUG=True
                 )
         return app
@@ -81,9 +82,8 @@ class TestFunctionality(TestBase):
     def test_new_char(self):
         with self.client:
             start = characters.query.count() #num of characters in db at start is equal to 1
-            response = self.client.post(
-                '/new',
-                data=dict(
+            self.client.post(
+                '/new',data=dict(
                 name = "Testing",
                 clas = "Wizard",
                 race = "Elf",
@@ -101,13 +101,14 @@ class TestFunctionality(TestBase):
                 ),
                 follow_redirects=True
             )
+           # self.assertIn(b"Characters",response.data)
             end = characters.query.count() #num of characters in db after creation of a character, should be equal to 2
-            self.assertTrue(end > start) #check if creation has gone through
+            self.assertEqual(characters.query.count(), 2) #check if creation has gone through
 
     def test_update_char(self):
         with self.client:
             start = characters.query.filter_by(id=1).first().name #name @id=1 at start
-            response = self.client.post(
+            self.client.post(
                     url_for("edit", identity=1),
                     data=dict(
                     name = "Changed", #change name from Testchar to Changed, all other info is identical
@@ -131,7 +132,7 @@ class TestFunctionality(TestBase):
     def test_delete_char(self):
         with self.client:
             start = characters.query.count() #num of entries in db
-            response = self.client.post(
+            self.client.post(
                     url_for("delete", identity=1),
                     follow_redirects=True)
             end = characters.query.count() #num of entries in db after deletion
