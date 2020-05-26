@@ -12,14 +12,15 @@ In fulfillment of the week 5 CRUD application project
 
 # Requirements
 To create a CRUD application of our choice that uses the technologies and methods we have learned up to this point namely:
-*A Kanban board
-*A relational database to store at least two tables persistently and a model of their relationship
-*Clear documentation and a risk assesment
-*A python based CRUD application made using best practices such as TDD
-*Test suites and automated tests for the application. Must have a high coverage with consistent reports and evidence
-*A functioning front end
-*A version control system using the Feature-Branch model
-*Code built through a CI server and deployed to a cloud based VM
+
+* A Kanban board
+* A relational database to store at least two tables persistently and a model of their relationship
+* Clear documentation and a risk assesment
+* A python based CRUD application made using best practices such as TDD
+* Test suites and automated tests for the application. Must have a high coverage with consistent reports and evidence
+* A functioning front end
+* A version control system using the Feature-Branch model
+* Code built through a CI server and deployed to a cloud based VM
 
 **Solution**
 I settled on making a simple d&d character sheet platform that allows the user to create, read, update and delete characters based on the d&d 5E ruleset. It will also have an admin function to allow for the dungeon master to view the character sheets of their players for the purpose of session planning
