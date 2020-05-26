@@ -35,11 +35,11 @@ Initially my risk assesment was fairly simple as shown above. The risks were lar
 
 After learning more about security concerns and Jenkins I was able to identify and add a few more areas of risk
 
-**trello**
+**Trello**
 
 ![](https://puu.sh/FOW12/d87f154013.jpg)
 
-The initial scope of my app was a bit different because I assumed a login system rather than this being an app for one. My understanding of the requirements and difficulty of each task was also not perfect because this was made before work on the code of the project had started
+The initial scope of my app was a bit different because I assumed a login system. My understanding of the requirements and difficulty of each task was also not perfect because this was made before work on the code of the project had started
 
 ![](https://puu.sh/FOW1x/fb566d3ab3.jpg)
 
@@ -53,13 +53,13 @@ Initial design
 
 The Characters table was to act as the central link in a chain of tables dependant on each other. I did not include the (at this time planned) users table because it would distract from the design of the main app and because I was on the fence about including a login system at all
 
-final design
+Final design
 
 ![](https://puu.sh/FOVnT/cf4fd1b441.png)
 
 As the timeframe and the technologies to be used became more clear, I changed direction on the design to be a little less complex. The subraces and subclasses were dropped due to the complexity of the logic and amount of data input required to set up the relationships between the tables
 
-**system level design**
+**System level design**
 
 ![](http://puu.sh/FOVt1/8d0fbcac37.jpg)
 
