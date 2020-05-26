@@ -3,11 +3,12 @@
 In fulfillment of the week 5 CRUD application project
 
 # Contents
-* lorem
-* ipsum
-* dolor
-* sit
-* amet
+* Requirements
+* Solution
+* Architecture
+* Testing
+* Planning
+* Future Improvements
 
 # Requirements
 To create a CRUD application of our choice that uses the technologies and methods we have learned up to this point namely:
@@ -26,20 +27,21 @@ I settled on making a simple d&d character sheet platform that allows the user t
 # Architecture
 Initial design
 [insert erd1]
-design 2
-[insert design 2]
-commentary on changes
+I did not include the (at this time planned) users table because it would distract from the design of the main app and because I was on the fence about including a login system at all
+
 final design
 [insert final design]
-commentary on why it changed
+As the timeframe and the technologies to be used became more clear, I changed direction on the design to be a little less complex. The subraces and subclasses were dropped due to the complexity of the logic and amount of data input required to set up the relationships between the tables
 
 **system level design**
 [insert pic of tools being used as a CI pipeline diagram]
+The source code for this project was written in Python using the Flask framework. HTML and CSS were used 
 
 # Testing
-reports and tool implementation
+I achieved a 93% testing coverage. The missing 7% is due to a couple of debugging functions and a bug in a test for my sheets page that I couldn't resolve
+[insert pic]
 
-# Risk assesment
+# Planning
 initial
 [insert pic]
 discuss
@@ -47,8 +49,6 @@ final
 [pic]
 discuss
 
-# Front end design
-[insert pictures]
 
 # Future improvements
 discuss
