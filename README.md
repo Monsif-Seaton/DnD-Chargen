@@ -23,7 +23,7 @@ To create a CRUD application of our choice that uses the technologies and method
 * Code built through a CI server and deployed to a cloud based VM
 
 **Solution**
-I settled on making a simple d&d character sheet platform that allows the user to create, read, update and delete characters based on the d&d 5E ruleset. It will also have an admin function to allow for the dungeon master to view the character sheets of their players for the purpose of session planning
+I settled on making a simple d&d character sheet platform that allows the user to create, read, update and delete characters based on a simplified version of the d&d 5E ruleset
 
 # Planning
 ![](http://puu.sh/FOVGe/8809d2b4e9.png)
