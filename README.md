@@ -59,6 +59,7 @@ final design
 As the timeframe and the technologies to be used became more clear, I changed direction on the design to be a little less complex. The subraces and subclasses were dropped due to the complexity of the logic and amount of data input required to set up the relationships between the tables
 
 **system level design**
+
 ![](http://puu.sh/FOVt1/8d0fbcac37.jpg)
 
 The source code for this project was written in Python using the Flask framework. HTML and CSS were used for the front end website. Github was used as the source control platform and Jenkins pulled from this as thr CI server. Builds were deployed to google cloud platform using gunicorn
