@@ -26,15 +26,15 @@ I settled on making a simple d&d character sheet platform that allows the user t
 
 # Architecture
 Initial design
-[insert erd1]
+![erd1](https://puu.sh/FOVmC/23e70c7dcc.png)
 I did not include the (at this time planned) users table because it would distract from the design of the main app and because I was on the fence about including a login system at all
 
 final design
-[insert final design]
+![erd2](https://puu.sh/FOVnT/cf4fd1b441.png)
 As the timeframe and the technologies to be used became more clear, I changed direction on the design to be a little less complex. The subraces and subclasses were dropped due to the complexity of the logic and amount of data input required to set up the relationships between the tables
 
 **system level design**
-[insert pic of tools being used as a CI pipeline diagram]
+![system level pic](http://puu.sh/FOVt1/8d0fbcac37.jpg)
 The source code for this project was written in Python using the Flask framework. HTML and CSS were used 
 
 # Testing
