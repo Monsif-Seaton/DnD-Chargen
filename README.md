@@ -62,7 +62,7 @@ As the timeframe and the technologies to be used became more clear, I changed di
 
 ![](http://puu.sh/FOVt1/8d0fbcac37.jpg)
 
-The source code for this project was written in Python using the Flask framework. HTML and CSS were used for the front end website. Github was used as the source control platform and Jenkins pulled from this as thr CI server. Builds were deployed to google cloud platform using gunicorn
+The source code for this project was written in Python using the Flask framework and tested using Pytest. HTML and CSS were used for the front end website. Github was used as the source control platform and Jenkins pulled from this as thr CI server. Builds were deployed to google cloud platform using gunicorn
 
 # Testing
 I achieved a 93% testing coverage. The missing 7% is due to a couple of one line debugging functions and a bug in a test for my sheets page that I couldn't resolve. This bug is related to my use of dynamic urls, but tests with the same structure work for other dynamic url pages in the app
