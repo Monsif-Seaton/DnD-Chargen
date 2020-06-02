@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  flask:
+    image: dndapp
+    build: .
+    container_name: dndcontainer
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+    environment:
+      DATABASE_URI: ${DATABASE_URI}
+      MY_SECRET_KEY: ${MY_SECRET_KEY}
+  database:
+    image: mysql:5.7
+    container_name: dnddb
+    ports:
+    - target: 3306
+      published: 3306
+      protocol: tcp
+    volumes:
+    - type: volume
+      source: dndvolume
+      target: /var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+volumes:
+  dndvolume:
+
+
