@@ -1,2 +1,3 @@
 #!/bin/bash
-docker stack deploy --compose-file docker-compose.yaml dndstack
+#sudo usermod -aG docker ${USER}
+sudo docker stack deploy --compose-file docker-compose.yaml dndstack
