@@ -4,7 +4,6 @@ pipeline {
     stages{
 
             stage('Dependencies'){
-                agent {label 'master'}
                 steps{
                     sh 'chmod +x ./scripts/*'
                     sh 'bash ./scripts/before_installation.sh'
