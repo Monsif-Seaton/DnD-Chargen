@@ -14,7 +14,7 @@ pipeline {
             stage('Deploying Docker Compose'){
                 steps{
                     sh 'chmod +x ./scripts/*'
-                    sh './script/docker.sh'
+                    sh './scripts/docker.sh'
                 }
             }
 
