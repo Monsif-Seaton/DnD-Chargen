@@ -12,7 +12,7 @@ pipeline {
                 }
             }
 
-            stage('Deploying Docker Stack'){
+            stage('Deploying Docker Compose'){
                 agent {label 'manager_node'}
                 steps{
                     sh 'chmod +x ./scripts/*'
